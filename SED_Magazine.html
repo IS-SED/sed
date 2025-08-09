@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SED</title>
+    <style>
+         html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        padding: 0 32px;
+        background: transparent;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        color: white;
+        }
+        .logo {
+        height: 48px;
+        display: block;
+        color:white;
+        }
+        .nav {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        }
+        .nav-item {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        padding: 8px 12px;
+        transition: background 0.2s;
+        }
+        .nav-item:hover {
+        background: #f5f5f5;
+        border-radius: 4px;
+        color:black
+        }
+        .dropdown {
+        position: relative;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+        }
+        .dropdown-btn {
+        background: none;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 8px 12px;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+        }
+        .dropdown-btn:hover {
+        background: #f5f5f5;
+        border-radius: 4px;
+        color:black;
+        }
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        min-width: 140px;
+        background: #fff;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+        border-radius: 6px;
+        z-index: 100;
+        flex-direction: column;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+        }
+        .dropdown-content a {
+        color: #222;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+        }
+        .dropdown-content a:hover {
+        background: #f0f0f0;
+        }
+        .dropdown.open .dropdown-content {
+        display: flex;
+        }
+        .dropdown.hover .dropdown-content {
+          display: flex;
+        }
+        h1 {
+            text-align: center;
+            font-size: 70px;
+        }
+        #bgimg {
+        height: 100vh;
+        background-image: url('SED Website Background.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        }
+        #representation-logo {
+            display: block;
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+        }
+        main{
+            font-family: 'Times New Roman', Times, serif;
+            color: white;
+            font-weight: bold;
+            margin-left:100px;
+        }
+        #mag20251{
+            background-color:white;
+            color:darkblue;
+            border:2px solid white;
+            border-radius: 8px;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            width: 250px;
+            height:125px;
+            font-size:35px;
+            display: block;
+            margin: 0 auto;
+        }
+        footer {
+            background-color: transparent;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top:auto;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body id="bgimg">
+    <header class="header">
+        <a href="Sed_website_lh.html" class="logo">
+            <p>SED</p>
+        </a>
+        <nav class="nav">
+            <a href="SED_Research Papers.html" class="nav-item" target="_blank" rel="noopener noreferrer">Research Paper</a>
+            <a href="SED_Magazine.html" class="nav-item" target="_blank" rel="noopener noreferrer">Magazines</a>
+            <a href="https://www.youtube.com/@sed-c2s" class="nav-item" target="_blank" rel="noopener noreferrer">Videos</a>
+            <!-- <a href="/link3" class="nav-item" target="_blank" rel="noopener noreferrer">Competitions</a> -->
+            <div class="dropdown">
+            <button class="dropdown-btn">Contact</button>
+            <div class="dropdown-content">
+                <a href="https://forms.gle/gnNgvm7WZJDEdq1JA" target="_blank" rel="noopener noreferrer">Contact Form</a>
+                <a href="https://forms.gle/fPrr9yh6uCMXQnK39" target="_blank" rel="noopener noreferrer">Application</a>
+            </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <img src="SED_Logo__2.png" id="representation-logo">
+        <h1> Curiosite</h1>
+        <h2>
+            <p> Curiosite is a name of the SED Magazine. It is monthly and free Magazine, publishing at the beginning of each month. 
+            <p>Magazine is created by SED Magazine Team.</p>
+            <p>To make improvement and create magazine with better quality in the future. We are collecting the opinions of the reader through google form. The form is presented as QR Code in the one of the last page of the magazine.</p>
+            <p>The form is also located in the "Contact" menu in this website. If you want to send the opinions as a reader, you may click "Contact" menu and click "Contact Form"</p>
+            <button id="mag20251" data-url="https://online.fliphtml5.com/imbfw/sxgo/">Curiosite<br>August</button>
+        </h2>  
+    </main>
+    <footer>
+        <br><br><br><br><br><br><br><br><br>
+        <p>&copy; 2025 SED. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetUrl = this.getAttribute('data-url');
+                window.open(targetUrl, '_blank');
+            });
+        });
+        });
+        document.querySelector('.dropdown-btn').addEventListener('click', function(event) {
+        event.stopPropagation();
+        document.querySelector('.dropdown').classList.toggle('open');
+        });
+        document.addEventListener('click', function() {
+        document.querySelector('.dropdown').classList.remove('open');
+        });
+        document.getElementById('mag20251').onclick = function() {
+            window.location.href = this.getAttribute('data-url');
+        };
+    </script>
+</body>
+</html>
